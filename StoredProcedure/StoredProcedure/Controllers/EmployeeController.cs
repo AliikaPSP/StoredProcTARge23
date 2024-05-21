@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StoredProcedure.Models;
 using StoredProcedure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace StoredProcedure.Controllers
 {
