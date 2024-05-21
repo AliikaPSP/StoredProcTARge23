@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using StoredProcedure.Data;
+
 namespace StoredProcedure
 {
     public class Program
@@ -6,8 +9,8 @@ namespace StoredProcedure
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<>(options =>
-                options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<StoredProcDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
